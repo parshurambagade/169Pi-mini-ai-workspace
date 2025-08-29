@@ -1,6 +1,7 @@
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Pin, PinOff } from "lucide-react";
+import { useMessageStore } from "../store/messageStore";
 
 interface Message {
   id: number;
@@ -13,6 +14,7 @@ interface Message {
 }
 
 const MessageCard = ({
+  id,
   title,
   description,
   tags,
@@ -20,6 +22,12 @@ const MessageCard = ({
   created_at,
   pinned,
 }: Message) => {
+  const togglePin = useMessageStore((state) => state.togglePin);
+
+  const handleTogglePin = () => {
+    togglePin(id);
+  };
+
   return (
     <div className="bg-card border border-border p-4 flex flex-col gap-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
       <div className="flex flex-col gap-2">
@@ -29,7 +37,12 @@ const MessageCard = ({
             <p className="text-sm text-muted-foreground">{description}</p>
           </div>
           <div>
-            <Button variant="secondary" size="icon" className="size-8">
+            <Button
+              variant="secondary"
+              size="icon"
+              className="size-8"
+              onClick={handleTogglePin}
+            >
               {!pinned ? (
                 <PinOff className="text-secondary-foreground" />
               ) : (
