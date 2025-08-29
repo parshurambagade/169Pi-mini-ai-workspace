@@ -21,12 +21,12 @@ const MessageCard = ({
   pinned,
 }: Message) => {
   return (
-    <div className="border p-4 flex flex-col gap-4">
+    <div className="bg-card border border-border p-4 flex flex-col gap-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center w-full">
           <div>
-            <h2 className="font-bold">{title}</h2>
-            <p className="text-sm">{description}</p>
+            <h2 className="font-bold text-card-foreground">{title}</h2>
+            <p className="text-sm text-muted-foreground">{description}</p>
           </div>
           <div>
             <Button variant="secondary" size="icon" className="size-8">
