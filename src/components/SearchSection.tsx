@@ -11,15 +11,18 @@ const SearchSection = () => {
   return (
     <section
       aria-label="Search"
-      className="bg-card border border-border p-4 flex items-center justify-center w-full rounded-lg shadow-sm"
+      className="bg-card border border-border p-3 sm:p-4 flex items-center justify-center w-full rounded-lg shadow-sm"
     >
-      <Input
-        type="text"
-        placeholder="Search messages..."
-        aria-label="Search"
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
+      <div className="w-full">
+        <Input
+          type="text"
+          placeholder="Search messages..."
+          aria-label="Search"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="w-full text-sm sm:text-base"
+        />
+      </div>
     </section>
   );
 };

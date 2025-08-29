@@ -22,11 +22,13 @@ const MessagesSection = () => {
   return (
     <section
       aria-label="Messages"
-      className="bg-card border border-border p-4 rounded-lg shadow-sm flex flex-col gap-4"
+      className="bg-card border border-border p-3 sm:p-4 lg:p-6 rounded-lg shadow-sm flex flex-col gap-3 sm:gap-4"
     >
-      <div className="flex justify-between items-center">
-        <h2 className="font-semibold text-card-foreground">Messages</h2>
-        <span className="text-sm text-muted-foreground">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0">
+        <h2 className="font-semibold text-card-foreground text-lg sm:text-xl">
+          Messages
+        </h2>
+        <span className="text-xs sm:text-sm text-muted-foreground">
           {searchQuery ? `${messageCount} found` : `${messageCount} total`}
         </span>
       </div>

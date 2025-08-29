@@ -11,14 +11,14 @@ const MemoryCardsContainer = () => {
 
   if (pinnedMessages.length === 0) {
     return (
-      <div className="text-center p-4 text-muted-foreground text-sm">
+      <div className="text-center p-3 sm:p-4 text-muted-foreground text-xs sm:text-sm">
         No pinned messages yet
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3 sm:gap-4">
       {pinnedMessages.map((message) => (
         <MemoryCard key={message.id} {...message} />
       ))}

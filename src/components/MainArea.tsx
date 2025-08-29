@@ -3,7 +3,7 @@ import SearchBox from "./SearchSection";
 
 const MainArea = () => {
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4 sm:gap-6">
       <div>
         <SearchBox />
       </div>

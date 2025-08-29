@@ -31,21 +31,25 @@ const MessagesContainer = () => {
   if (filteredMessages.length === 0) {
     if (searchQuery.trim()) {
       return (
-        <div className="text-center p-8 text-muted-foreground">
-          <div className="mb-2">No messages found for "{searchQuery}"</div>
-          <div className="text-sm">Try searching for different keywords</div>
+        <div className="text-center p-6 sm:p-8 text-muted-foreground">
+          <div className="mb-2 text-sm sm:text-base">
+            No messages found for "{searchQuery}"
+          </div>
+          <div className="text-xs sm:text-sm">
+            Try searching for different keywords
+          </div>
         </div>
       );
     }
     return (
-      <div className="text-center p-8 text-muted-foreground">
-        <div>No messages available</div>
+      <div className="text-center p-6 sm:p-8 text-muted-foreground">
+        <div className="text-sm sm:text-base">No messages available</div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3 sm:gap-4">
       {filteredMessages.map((message) => (
         <MessageCard key={message.id} {...message} />
       ))}
